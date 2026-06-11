@@ -8,6 +8,7 @@ export const team: Teacher[] = [
     role: "Responsable Technique Monde",
     belt: "Ceinture noire 6ᵉ degré",
     initials: "ZM",
+    photo: "/images/equipe/ze-marcello.svg",
     bio:
       "Ceinture noire 6ᵉ degré sous Sergio « Bolão » Souza et fondateur " +
       "d'ICON Jiu-Jitsu, Maître Zé Marcello est une figure légendaire du " +
@@ -26,6 +27,7 @@ export const team: Teacher[] = [
     role: "Référent Technique France",
     belt: "Ceinture noire de JJB",
     initials: "AP",
+    photo: "/images/equipe/anderson-pereira.svg",
     bio:
       "Tombé dans les arts martiaux dès l'âge de 5 ans par le judo, " +
       "Anderson Pereira a obtenu sa ceinture noire de Jiu-Jitsu Brésilien " +
@@ -44,6 +46,7 @@ export const team: Teacher[] = [
     role: "Professeure — Responsable Team Icon Pays Basque",
     belt: "Ceinture noire 1ᵉʳ degré",
     initials: "JC",
+    photo: "/images/equipe/juliana-calabria.svg",
     bio:
       "Ceinture noire 1ᵉʳ degré et compétitrice internationale, Juliana " +
       "Calabria dirige les entraînements de la Team Icon Pays Basque. " +

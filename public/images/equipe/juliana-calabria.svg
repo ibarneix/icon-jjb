@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Portrait stylisé — JC">
+  <defs>
+    <radialGradient id="halo-juliana-calabria" cx="50%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="320" fill="#f5f1ec"/>
+  <rect width="320" height="320" fill="url(#halo-juliana-calabria)"/>
+
+  <!-- Buste : kimono blanc -->
+  <path d="M50 320 C 52 240 96 196 160 196 C 224 196 268 240 270 320 Z"
+        fill="#ffffff" stroke="#ddd5cb" stroke-width="2"/>
+
+  <!-- Tête et cou -->
+  <rect x="138" y="150" width="44" height="52" rx="12" fill="#292524"/>
+  <circle cx="160" cy="118" r="52" fill="#292524"/>
+
+  <!-- Poitrine et revers croisés du gi -->
+  <path d="M118 198 L 160 290 L 202 198 Z" fill="#292524"/>
+  <path d="M114 198 160 290" stroke="#ddd5cb" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <path d="M114 198 160 290" stroke="#ffffff" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <path d="M206 198 160 290" stroke="#ddd5cb" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <path d="M206 198 160 290" stroke="#ffffff" stroke-width="20" stroke-linecap="round" fill="none"/>
+
+  <!-- Ceinture noire, barre de grade orange et initiales brodées -->
+  <rect x="74" y="268" width="172" height="22" rx="11" fill="#1c1917"/>
+  <rect x="206" y="272" width="26" height="14" rx="4" fill="#ea580c"/>
+  <text x="124" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" letter-spacing="2" fill="#ffffff">JC</text>
+</svg>

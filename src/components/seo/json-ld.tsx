@@ -16,6 +16,8 @@ export function JsonLd() {
     legalName: site.association.legalName,
     description: site.description,
     url: site.url,
+    logo: `${site.url}/images/logo.svg`,
+    image: `${site.url}/images/logo.svg`,
     telephone: "+33674651959",
     email: site.contact.email,
     foundingDate: String(site.foundingYear),

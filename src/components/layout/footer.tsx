@@ -10,14 +10,18 @@ import { navigation } from "@/data/navigation";
 import { site } from "@/data/site";
 import { Logo } from "@/components/shared/logo";
 
-/** Pied de page : identité, navigation, dojos et coordonnées complètes. */
+/**
+ * Pied de page : identité, navigation, dojos et coordonnées complètes.
+ * Seule zone sombre du site (noir de la marque) — les couleurs y sont
+ * fixées explicitement plutôt que via les variables du thème clair.
+ */
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-[#070708]">
+    <footer className="bg-stone-950 text-stone-400">
       <div className="container-site grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo />
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          <Logo className="text-white" />
+          <p className="mt-4 text-sm leading-relaxed">
             {site.baseline}. Loisir ou compétition, Gi et No-Gi, dès 4 ans —
             dans un dojo neuf à deux pas de l’océan.
           </p>
@@ -27,7 +31,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Instagram ${site.social.instagramHandle}`}
-              className="rounded-md border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              className="rounded-md border border-stone-700 p-2 transition-colors hover:border-primary hover:text-primary"
             >
               <InstagramIcon className="size-5" aria-hidden="true" />
             </a>
@@ -36,7 +40,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Page Facebook du club"
-              className="rounded-md border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              className="rounded-md border border-stone-700 p-2 transition-colors hover:border-primary hover:text-primary"
             >
               <FacebookIcon className="size-5" aria-hidden="true" />
             </a>
@@ -44,7 +48,7 @@ export function Footer() {
         </div>
 
         <nav aria-label="Navigation pied de page">
-          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-foreground uppercase">
+          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-white uppercase">
             Le site
           </h2>
           <ul className="mt-4 space-y-2.5">
@@ -52,7 +56,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="text-sm transition-colors hover:text-primary"
                 >
                   {item.label}
                 </Link>
@@ -61,7 +65,7 @@ export function Footer() {
             <li>
               <Link
                 href="/mentions-legales"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm transition-colors hover:text-primary"
               >
                 Mentions légales
               </Link>
@@ -70,7 +74,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-foreground uppercase">
+          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-white uppercase">
             Nos dojos
           </h2>
           <ul className="mt-4 space-y-4">
@@ -80,8 +84,8 @@ export function Footer() {
                   className="mt-0.5 size-4 shrink-0 text-primary"
                   aria-hidden="true"
                 />
-                <span className="text-muted-foreground">
-                  <span className="block font-medium text-foreground">
+                <span>
+                  <span className="block font-medium text-white">
                     {location.name}
                   </span>
                   {location.address}, {location.city}
@@ -92,26 +96,26 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-foreground uppercase">
+          <h2 className="font-display text-sm font-semibold tracking-[0.25em] text-white uppercase">
             Contact
           </h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
               <a
                 href={site.contact.phoneHref}
-                className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2.5 transition-colors hover:text-primary"
               >
                 <Phone className="size-4 text-primary" aria-hidden="true" />
                 {site.contact.phoneDisplay}
               </a>
-              <span className="block pl-6.5 text-xs text-muted-foreground/70">
+              <span className="block pl-6.5 text-xs text-stone-500">
                 {site.contact.contactNames}
               </span>
             </li>
             <li>
               <a
                 href={`mailto:${site.contact.email}`}
-                className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2.5 transition-colors hover:text-primary"
               >
                 <Mail className="size-4 text-primary" aria-hidden="true" />
                 {site.contact.email}
@@ -122,7 +126,7 @@ export function Footer() {
                 href={site.social.helloasso}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2.5 transition-colors hover:text-primary"
               >
                 <span
                   aria-hidden="true"
@@ -137,8 +141,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border py-6">
-        <div className="container-site flex flex-col items-center justify-between gap-2 text-center text-xs text-muted-foreground/70 sm:flex-row sm:text-left">
+      <div className="border-t border-white/10 py-6">
+        <div className="container-site flex flex-col items-center justify-between gap-2 text-center text-xs text-stone-500 sm:flex-row sm:text-left">
           <p>
             © {new Date().getFullYear()} {site.association.legalName} — Association
             loi 1901 ({site.association.rna})
