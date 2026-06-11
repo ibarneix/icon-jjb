@@ -42,7 +42,7 @@ export function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
               <h3 className="font-display text-xl leading-tight font-semibold tracking-wide uppercase">
                 {teacher.name}
               </h3>
-              <p className="mt-1 text-sm font-medium text-primary">{teacher.role}</p>
+              <p className="mt-1 text-sm font-medium text-primary-strong">{teacher.role}</p>
             </div>
           </div>
 
@@ -52,9 +52,9 @@ export function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
               aria-hidden="true"
               className="flex h-2.5 w-24 overflow-hidden rounded-full"
             >
-              <span className="grow bg-zinc-900 ring-1 ring-border ring-inset" />
+              <span className="grow bg-stone-900 ring-1 ring-border ring-inset" />
               <span className="w-7 bg-primary" />
-              <span className="w-2 bg-zinc-900 ring-1 ring-border ring-inset" />
+              <span className="w-2 bg-stone-900 ring-1 ring-border ring-inset" />
             </span>
             <Badge variant="accent">{teacher.belt}</Badge>
           </div>
@@ -66,7 +66,7 @@ export function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
           <ul className="mt-5 space-y-2 border-t border-border pt-5">
             {teacher.highlights.map((highlight) => (
               <li key={highlight} className="flex items-start gap-2.5 text-sm">
-                <Medal className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
+                <Medal className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
                 <span>{highlight}</span>
               </li>
             ))}

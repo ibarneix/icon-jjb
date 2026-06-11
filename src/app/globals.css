@@ -2,28 +2,28 @@
 
 /* ────────────────────────────────────────────────────────────
    Team Icon Jiu-Jitsu Pays Basque — Design tokens
-   Palette : noir profond / blanc cassé / rouge Icon / or champion
+   Palette : orange Icon / noir tatami, sur fond clair lumineux
    ──────────────────────────────────────────────────────────── */
 
 :root {
-  --background: #0b0b0d;
-  --foreground: #f5f5f4;
+  --background: #faf9f7;
+  --foreground: #1c1917;
 
-  --card: #131316;
-  --card-foreground: #f5f5f4;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
 
-  --muted: #1a1a1f;
-  --muted-foreground: #a3a3ad;
+  --muted: #f3f1ee;
+  --muted-foreground: #57534e;
 
-  --primary: #e11d2e;
-  --primary-strong: #b80f1e;
+  --primary: #ea580c;
+  --primary-strong: #c2410c;
   --primary-foreground: #ffffff;
 
-  --accent: #d8a741;
-  --accent-foreground: #0b0b0d;
+  --accent: #1c1917;
+  --accent-foreground: #faf9f7;
 
-  --border: #232329;
-  --ring: #e11d2e;
+  --border: #e7e2dc;
+  --ring: #ea580c;
 
   --header-height: 4.5rem;
 }
@@ -103,17 +103,17 @@
     }
   }
 
-  /* Halo rouge utilisé dans le hero et les sections clés */
+  /* Halo orange utilisé dans le hero et les sections clés */
   .glow-primary {
     background:
       radial-gradient(
         42rem 28rem at 18% 0%,
-        color-mix(in oklab, var(--primary) 16%, transparent),
+        color-mix(in oklab, var(--primary) 12%, transparent),
         transparent 70%
       ),
       radial-gradient(
         36rem 24rem at 95% 15%,
-        color-mix(in oklab, var(--accent) 7%, transparent),
+        color-mix(in oklab, var(--primary) 7%, transparent),
         transparent 70%
       );
   }

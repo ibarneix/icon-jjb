@@ -54,7 +54,7 @@ src/
 │   ├── page.tsx            # Accueil (one-page à ancres)
 │   ├── mentions-legales/   # Page légale (LCEN)
 │   ├── sitemap.ts robots.ts manifest.ts icon.svg
-│   └── globals.css         # Thème : variables CSS noir/blanc/rouge/or (@theme)
+│   └── globals.css         # Thème : variables CSS orange/noir sur fond clair (@theme)
 ├── components/
 │   ├── ui/                 # Primitives shadcn-style : Button, Badge, Card
 │   ├── layout/             # Navbar (menu mobile Radix Dialog), Footer
@@ -85,11 +85,17 @@ Tout le contenu se modifie dans `src/data/` sans toucher aux composants.
    Les autres créneaux sont **indicatifs** (`confirmed: false`) — remplacez-les
    par le planning officiel puis passez `confirmed` à `true` pour retirer la
    mention « planning indicatif » affichée automatiquement.
-2. **Photos** : déposez les portraits dans `public/images/equipe/` et
-   renseignez `photo` dans `src/data/team.ts` (le monogramme sert de
-   fallback). Ajoutez aussi vos photos de dojo/tatamis si souhaité.
-3. **Logo officiel** : remplacez le monogramme (`components/shared/logo.tsx`
-   et `app/icon.svg`) par le logo ICON du club si vous disposez du fichier.
+2. **Photos** : des portraits de remplacement (PNG) sont en place dans
+   `public/images/equipe/`. Écrasez simplement chaque fichier par la vraie
+   photo du professeur, en conservant le même nom (`ze-marcello.png`,
+   `anderson-pereira.png`, `juliana-calabria.png`) — aucun code à modifier.
+   Même chose pour l'illustration du hero (`public/images/hero-grappling.png`)
+   si vous préférez une photo de tatami.
+3. **Logo officiel** : un logotype orange/noir (PNG) est en place. Pour
+   mettre le logo ICON officiel, écrasez simplement ces trois fichiers en
+   gardant les mêmes noms : `public/images/logo-mark.png` (monogramme carré,
+   navbar/footer), `public/images/logo.png` (version complète, partage et
+   SEO) et `src/app/icon.png` (favicon).
 4. **Mentions légales** : vérifiez le siège social exact de l'association.
 
 ## Contenu intégré (source : iconjjb64.fr & HelloAsso)

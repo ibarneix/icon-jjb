@@ -49,7 +49,7 @@ export function TrainingCenters() {
                         className="flex items-start gap-2 text-sm text-foreground/90"
                       >
                         <CircleCheck
-                          className="mt-0.5 size-4 shrink-0 text-accent"
+                          className="mt-0.5 size-4 shrink-0 text-primary"
                           aria-hidden="true"
                         />
                         {feature}

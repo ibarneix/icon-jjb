@@ -51,6 +51,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — JJB & Grappling à Anglet`,
     description: site.description,
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1380,
+        height: 360,
+        alt: site.name,
+      },
+    ],
   },
   twitter: {
     card: "summary",
@@ -64,8 +72,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0b0d",
-  colorScheme: "dark",
+  themeColor: "#faf9f7",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

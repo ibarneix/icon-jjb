@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -48,11 +49,24 @@ export function Hero() {
       className="glow-primary relative flex min-h-svh items-center overflow-hidden"
     >
       <div aria-hidden="true" className="bg-tatami absolute inset-0" />
-      {/* Liseré « ceinture » décoratif */}
-      <div
+      {/* Illustration grappling : garde assise contre passeur debout */}
+      <motion.div
         aria-hidden="true"
-        className="absolute top-0 right-[12%] hidden h-full w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent lg:block"
-      />
+        className="pointer-events-none absolute top-1/2 right-[2%] hidden -translate-y-[44%] select-none lg:block xl:right-[4%]"
+        initial={reduceMotion ? undefined : { opacity: 0, x: 32 }}
+        animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, delay: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
+      >
+        <Image
+          src="/images/hero-grappling.png"
+          alt=""
+          width={520}
+          height={460}
+          priority
+          sizes="(min-width: 1280px) 28rem, 24rem"
+          className="w-[24rem] xl:w-[28rem]"
+        />
+      </motion.div>
 
       <div className="container-site relative pt-(--header-height) pb-16">
         <motion.p
@@ -79,7 +93,7 @@ export function Hero() {
 
         <motion.p
           {...entrance(0.4)}
-          className="mt-6 font-display text-lg font-medium tracking-wider text-accent uppercase sm:text-xl"
+          className="mt-6 font-display text-lg font-medium tracking-wider text-primary-strong uppercase sm:text-xl"
         >
           {site.baseline}
         </motion.p>
