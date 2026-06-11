@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: icon-jjb
+    container_name: icon-jjb
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

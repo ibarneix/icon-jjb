@@ -34,6 +34,17 @@ Le projet se déploie tel quel : importez le dépôt sur Vercel, sans aucune
 configuration particulière (le projet est à la racine du dépôt). Aucune
 variable d'environnement n'est requise.
 
+## Déploiement avec Docker
+
+```bash
+git clone <url-du-dépôt> && cd icon-jjb
+docker compose up -d --build   # http://localhost:3000
+```
+
+Le build s'effectue entièrement dans l'image (multi-stage, sortie
+`standalone` de Next.js) : Node.js n'est pas requis sur l'hôte. Le site
+écoute sur le port 3000 (modifiable dans `docker-compose.yml`).
+
 ## Architecture
 
 ```
