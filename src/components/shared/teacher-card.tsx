@@ -28,8 +28,6 @@ export function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
                 alt={`Portrait de ${teacher.name}`}
                 width={72}
                 height={72}
-                // SVG : servi tel quel, l'optimiseur d'images ne traite pas ce format
-                unoptimized={teacher.photo.endsWith(".svg")}
                 className="size-18 rounded-full border-2 border-primary/50 object-cover"
               />
             ) : (
