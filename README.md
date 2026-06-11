@@ -91,11 +91,10 @@ Tout le contenu se modifie dans `src/data/` sans toucher aux composants.
    `anderson-pereira.png`, `juliana-calabria.png`) — aucun code à modifier.
    Même chose pour l'illustration du hero (`public/images/hero-grappling.png`)
    si vous préférez une photo de tatami.
-3. **Logo officiel** : un logotype orange/noir (PNG) est en place. Pour
-   mettre le logo ICON officiel, écrasez simplement ces trois fichiers en
-   gardant les mêmes noms : `public/images/logo-mark.png` (monogramme carré,
-   navbar/footer), `public/images/logo.png` (version complète, partage et
-   SEO) et `src/app/icon.png` (favicon).
+3. **Logo officiel** : deux fichiers pilotent tout, écrasez-les en gardant
+   les mêmes noms. `public/images/logo.png` : logo complet affiché dans la
+   navbar (et image de partage/SEO). `public/images/logo-mark.png` : version
+   carrée utilisée comme favicon, icône PWA et monogramme du footer.
 4. **Mentions légales** : vérifiez le siège social exact de l'association.
 
 ## Contenu intégré (source : iconjjb64.fr & HelloAsso)

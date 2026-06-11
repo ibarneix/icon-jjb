@@ -4,27 +4,44 @@ import { cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;
-  /** Masque le texte pour ne garder que le monogramme. */
-  compact?: boolean;
+  /**
+   * - `full` : logo complet (`public/images/logo.png`) — navbar.
+   * - `mark` : monogramme seul (`public/images/logo-mark.png`).
+   * - `mark-text` : monogramme + texte HTML, pour le footer noir où un
+   *   logo complet à texte sombre serait illisible.
+   */
+  variant?: "full" | "mark" | "mark-text";
 }
 
 /**
- * Logotype du club : monogramme orange ceinturé de noir + wordmark.
- * Le monogramme est un PNG (`public/images/logo-mark.png`) : remplacez ce
- * fichier par le logo officiel sans toucher au layout. Le texte hérite de
- * la couleur ambiante (lisible sur fond clair comme sur le footer noir).
+ * Logotype du club, entièrement piloté par deux PNG remplaçables sans
+ * toucher au code : `logo.png` (version complète) et `logo-mark.png`
+ * (monogramme carré, utilisé aussi comme favicon via `layout.tsx`).
  */
-export function Logo({ className, compact = false }: LogoProps) {
+export function Logo({ className, variant = "full" }: LogoProps) {
+  if (variant === "full") {
+    return (
+      <Image
+        src="/images/logo.png"
+        alt="Team Icon — Jiu-Jitsu Pays Basque"
+        width={138}
+        height={36}
+        priority
+        className={cn("h-9 w-auto", className)}
+      />
+    );
+  }
+
   return (
     <span className={cn("flex items-center gap-3", className)}>
       <Image
         src="/images/logo-mark.png"
-        alt=""
+        alt={variant === "mark" ? "Team Icon — Jiu-Jitsu Pays Basque" : ""}
         width={36}
         height={36}
         className="size-9 shrink-0 drop-shadow-[0_4px_12px_rgba(234,88,12,0.35)]"
       />
-      {!compact && (
+      {variant === "mark-text" && (
         <span className="flex flex-col leading-none">
           <span className="font-display text-lg font-bold tracking-widest uppercase">
             Team Icon

@@ -89,7 +89,7 @@ export function Navbar() {
               </Dialog.Description>
 
               <div className="flex items-center justify-between">
-                <Logo compact />
+                <Logo variant="mark" />
                 <Dialog.Close asChild>
                   <Button variant="ghost" size="icon" aria-label="Fermer le menu">
                     <X className="size-6" />

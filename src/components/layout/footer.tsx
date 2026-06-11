@@ -20,7 +20,7 @@ export function Footer() {
     <footer className="bg-stone-950 text-stone-400">
       <div className="container-site grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo className="text-white" />
+          <Logo variant="mark-text" className="text-white" />
           <p className="mt-4 text-sm leading-relaxed">
             {site.baseline}. Loisir ou compétition, Gi et No-Gi, dès 4 ans —
             dans un dojo neuf à deux pas de l’océan.

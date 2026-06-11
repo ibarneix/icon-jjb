@@ -69,6 +69,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Favicon : public/images/logo-mark.png — remplaçable sans toucher au code
+  icons: {
+    icon: [{ url: "/images/logo-mark.png", sizes: "512x512", type: "image/png" }],
+    apple: "/images/logo-mark.png",
+  },
 };
 
 export const viewport: Viewport = {
