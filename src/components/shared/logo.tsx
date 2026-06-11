@@ -24,7 +24,7 @@ export function Logo({ className, variant = "full" }: LogoProps) {
       <Image
         src="/images/logo.png"
         alt="Team Icon — Jiu-Jitsu Pays Basque"
-        width={138}
+        width={130}
         height={36}
         priority
         className={cn("h-9 w-auto", className)}

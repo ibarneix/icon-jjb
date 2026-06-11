@@ -61,10 +61,10 @@ export function Hero() {
           src="/images/hero-grappling.png"
           alt=""
           width={520}
-          height={460}
+          height={291}
           priority
-          sizes="(min-width: 1280px) 28rem, 24rem"
-          className="w-[24rem] xl:w-[28rem]"
+          sizes="(min-width: 1280px) 30rem, 26rem"
+          className="w-[26rem] rounded-2xl border border-border shadow-2xl xl:w-[30rem]"
         />
       </motion.div>
 
