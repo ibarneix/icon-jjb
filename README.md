@@ -85,11 +85,12 @@ Tout le contenu se modifie dans `src/data/` sans toucher aux composants.
    Les autres créneaux sont **indicatifs** (`confirmed: false`) — remplacez-les
    par le planning officiel puis passez `confirmed` à `true` pour retirer la
    mention « planning indicatif » affichée automatiquement.
-2. **Photos** : des portraits stylisés (SVG) sont en place dans
-   `public/images/equipe/`. Remplacez chaque fichier par la vraie photo du
-   professeur (et mettez à jour l'extension dans `src/data/team.ts`, ex.
-   `ze-marcello.jpg`). Même chose pour l'illustration du hero
-   (`public/images/hero-grappling.svg`) si vous préférez une photo de tatami.
+2. **Photos** : des portraits de remplacement (PNG) sont en place dans
+   `public/images/equipe/`. Écrasez simplement chaque fichier par la vraie
+   photo du professeur, en conservant le même nom (`ze-marcello.png`,
+   `anderson-pereira.png`, `juliana-calabria.png`) — aucun code à modifier.
+   Même chose pour l'illustration du hero (`public/images/hero-grappling.png`)
+   si vous préférez une photo de tatami.
 3. **Logo officiel** : un logotype orange/noir (monogramme + version complète
    `public/images/logo.svg`) est en place. Remplacez-le par le logo ICON
    officiel si vous disposez du fichier (`components/shared/logo.tsx`,

@@ -58,12 +58,12 @@ export function Hero() {
         transition={{ duration: 0.9, delay: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Image
-          src="/images/hero-grappling.svg"
+          src="/images/hero-grappling.png"
           alt=""
           width={520}
           height={460}
           priority
-          unoptimized
+          sizes="(min-width: 1280px) 28rem, 24rem"
           className="w-[24rem] xl:w-[28rem]"
         />
       </motion.div>
