@@ -27,13 +27,14 @@ export const locations: TrainingLocation[] = [
   {
     id: "resilience",
     name: "Dojo Résilience",
-    role: "Dojo secondaire — cours du mardi 12h30",
+    role: "Dojo secondaire — drill du mardi 12h30",
     address: "2 allée Pégase",
     city: "64600 Anglet",
     description:
-      "Le cours du mardi midi (12h30 – 13h45) se déroule au Dojo Résilience, " +
-      "salle partenaire située allée Pégase à Anglet.",
-    features: ["Créneau du mardi 12h30 – 13h45", "Salle partenaire équipée"],
+      "Le drill JJB & No-Gi du mardi midi (12h30 – 13h30) se déroule au " +
+      "Dojo Résilience, salle partenaire située allée Pégase à Anglet. " +
+      "C'est le seul cours donné hors de Stella Maris.",
+    features: ["Créneau du mardi 12h30 – 13h30", "Salle partenaire équipée"],
     mapEmbedUrl:
       "https://www.google.com/maps?q=2%20All%C3%A9e%20P%C3%A9gase%2C%2064600%20Anglet&output=embed",
     directionsUrl:

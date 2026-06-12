@@ -7,9 +7,9 @@ export function Schedule() {
     <section id="horaires" className="scroll-mt-24 border-y border-border bg-card/30">
       <div className="container-site py-20 md:py-28">
         <SectionHeading
-          eyebrow="Planning"
+          eyebrow="Planning — Saison 2025-2026"
           title="Tableau des horaires"
-          description="Des cours 6 jours sur 7, pour toutes et tous : enfants dès 4 ans, ados, adultes, Gi, No-Gi et créneaux 100% féminins. Filtrez pour trouver le vôtre."
+          description="Des cours 6 jours sur 7, pour toutes et tous : enfants (Kids 1 & 2), adultes, Gi, No-Gi, drill et roulade libre. Filtrez pour trouver le vôtre."
         />
         <ScheduleBoard />
       </div>

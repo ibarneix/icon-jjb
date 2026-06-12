@@ -80,11 +80,12 @@ Tout le contenu se modifie dans `src/data/` sans toucher aux composants.
 
 ## ⚠️ À faire avant la mise en production
 
-1. **Horaires** (`src/data/schedule.ts`) : seul le créneau du **mardi
-   12h30–13h45 au Dojo Résilience** est confirmé publiquement par le club.
-   Les autres créneaux sont **indicatifs** (`confirmed: false`) — remplacez-les
-   par le planning officiel puis passez `confirmed` à `true` pour retirer la
-   mention « planning indicatif » affichée automatiquement.
+1. **Horaires** (`src/data/schedule.ts`) : le planning officiel Stella Maris
+   **saison 2025-2026** est intégré (tous les créneaux `confirmed: true`).
+   Seul le drill du mardi 12h30–13h30 a lieu au Dojo Résilience. Le coaching
+   privé / small group du mardi après-midi est sur rendez-vous (sans horaire
+   fixe) et n'apparaît pas dans la grille — celui du vendredi 18h30–19h30 y
+   figure.
 2. **Photos** : des portraits de remplacement (PNG) sont en place dans
    `public/images/equipe/`. Écrasez simplement chaque fichier par la vraie
    photo du professeur, en conservant le même nom (`ze-marcello.png`,

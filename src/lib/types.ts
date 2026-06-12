@@ -34,7 +34,8 @@ export interface ScheduleEntry {
   end: string;
   title: string;
   audiences: Audience[];
-  style: Style;
+  /** `mixte` : cours Gi ET No-Gi (drill, roulade libre). */
+  style: Style | "mixte";
   locationId: LocationId;
   /** Précision affichée sous le titre (tranche d'âge, niveau…). */
   note?: string;

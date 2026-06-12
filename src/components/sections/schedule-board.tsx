@@ -110,8 +110,20 @@ export function ScheduleBoard() {
                               {audienceLabels[audience]}
                             </Badge>
                           ))}
-                          <Badge variant={entry.style === "gi" ? "default" : "accent"}>
-                            {entry.style === "gi" ? "Gi" : "No-Gi"}
+                          <Badge
+                            variant={
+                              entry.style === "gi"
+                                ? "default"
+                                : entry.style === "nogi"
+                                  ? "accent"
+                                  : "solid"
+                            }
+                          >
+                            {entry.style === "gi"
+                              ? "Gi"
+                              : entry.style === "nogi"
+                                ? "No-Gi"
+                                : "Gi & No-Gi"}
                           </Badge>
                           {entry.locationId !== "stella-maris" && (
                             <Badge variant="solid" className="gap-1">
