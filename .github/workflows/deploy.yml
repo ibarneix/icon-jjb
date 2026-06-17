@@ -1,0 +1,58 @@
+name: Déploiement GitHub Pages
+
+# Construit l'export statique Next.js et le publie sur GitHub Pages.
+# Prérequis (une seule fois) : Réglages du dépôt → Pages → Source =
+# « GitHub Actions ». Le site sera servi sur https://<user>.github.io/icon-jjb/
+
+on:
+  push:
+    branches: [main, claude/busy-galileo-fzwsq6]
+  workflow_dispatch:
+
+# Permissions nécessaires au déploiement Pages via Actions.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois ; on annule celui en cours s'il est dépassé.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (export statique sous /icon-jjb)
+        env:
+          NEXT_OUTPUT: export
+          NEXT_PUBLIC_BASE_PATH: /icon-jjb
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: npm run build
+
+      # Empêche GitHub Pages d'ignorer le dossier _next/ (traitement Jekyll).
+      - run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

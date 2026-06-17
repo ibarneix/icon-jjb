@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 
 import { site } from "@/data/site";
+import { asset } from "@/lib/asset";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -69,10 +70,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  // Favicon : public/images/logo-mark.png — remplaçable sans toucher au code
+  // Favicon : public/images/logo-mark.png — remplaçable sans toucher au code.
+  // asset() ajoute le basePath en export statique (non appliqué auto aux icônes).
   icons: {
-    icon: [{ url: "/images/logo-mark.png", sizes: "512x512", type: "image/png" }],
-    apple: "/images/logo-mark.png",
+    icon: [{ url: asset("/images/logo-mark.png"), sizes: "512x512", type: "image/png" }],
+    apple: asset("/images/logo-mark.png"),
   },
 };
 

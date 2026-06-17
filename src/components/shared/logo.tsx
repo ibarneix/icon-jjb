@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { asset } from "@/lib/asset";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -22,7 +23,7 @@ export function Logo({ className, variant = "full" }: LogoProps) {
   if (variant === "full") {
     return (
       <Image
-        src="/images/logo.png"
+        src={asset("/images/logo.png")}
         alt="Team Icon — Jiu-Jitsu Pays Basque"
         width={130}
         height={36}
@@ -35,7 +36,7 @@ export function Logo({ className, variant = "full" }: LogoProps) {
   return (
     <span className={cn("flex items-center gap-3", className)}>
       <Image
-        src="/images/logo-mark.png"
+        src={asset("/images/logo-mark.png")}
         alt={variant === "mark" ? "Team Icon — Jiu-Jitsu Pays Basque" : ""}
         width={36}
         height={36}

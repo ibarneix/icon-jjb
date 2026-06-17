@@ -45,6 +45,22 @@ Le build s'effectue entièrement dans l'image (multi-stage, sortie
 `standalone` de Next.js) : Node.js n'est pas requis sur l'hôte. Le site
 écoute sur le port 3000 (modifiable dans `docker-compose.yml`).
 
+## Déploiement sur GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` construit un **export statique**
+et le publie automatiquement. Une seule action manuelle, à faire une fois :
+**Réglages du dépôt → Pages → Source = « GitHub Actions »**. À chaque push
+sur `main` (ou via le bouton « Run workflow »), le site se met en ligne sur
+`https://<utilisateur>.github.io/icon-jjb/`.
+
+> ⚠️ GitHub Pages sert le site sous le sous-chemin `/icon-jjb`. C'est géré
+> par le build (`NEXT_OUTPUT=export`, `NEXT_PUBLIC_BASE_PATH=/icon-jjb` dans
+> le workflow) : `basePath` Next + l'helper `src/lib/asset.ts` qui préfixe
+> les images et le favicon (que `next/image` ne préfixe pas en export
+> statique). L'optimisation d'images Next est désactivée (pas de serveur).
+> Pour brancher le domaine `iconjjb64.fr` (servi à la racine), il faudra
+> retirer le `basePath` et ajouter un fichier `CNAME` — demandez si besoin.
+
 ## Architecture
 
 ```

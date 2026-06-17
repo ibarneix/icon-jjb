@@ -24,10 +24,24 @@ npm run lint     # ESLint (flat config)
 
 Aucun framework de test n'est configuré — ne pas chercher de commande de test.
 
+**Deux cibles de build** pilotées par variables d'env dans `next.config.ts` :
+- défaut → `output: "standalone"` (Docker/Vercel, serveur Node, optimisation
+  d'images active) ;
+- `NEXT_OUTPUT=export` + `NEXT_PUBLIC_BASE_PATH=/icon-jjb` → export 100 %
+  statique dans `out/` pour **GitHub Pages** (workflow `.github/workflows/
+  deploy.yml`, servi sous `/icon-jjb`, `images.unoptimized`, `trailingSlash`).
+
+⚠️ En export statique, `next/image` et les métadonnées (favicon, manifest)
+**n'appliquent pas le `basePath`** (seuls `_next/` et `next/link` le font).
+D'où `src/lib/asset.ts` : `asset("/images/…")` préfixe avec
+`NEXT_PUBLIC_BASE_PATH`. **Toute nouvelle image/icône doit passer par
+`asset()`** sinon 404 sur Pages. Les routes `robots.ts`/`sitemap.ts`/
+`manifest.ts` ont `export const dynamic = "force-static"` (requis par l'export).
+
 **Docker** (déploiement cible de l'utilisateur) : `docker compose up -d --build`
 → port 3000. Dockerfile multi-stage basé sur `output: "standalone"`
-(next.config.ts — ne pas retirer cette option). `sharp` est embarqué :
-l'optimiseur d'images Next fonctionne au runtime, y compris en conteneur.
+(ne pas retirer cette option). `sharp` est embarqué : l'optimiseur d'images
+Next fonctionne au runtime, y compris en conteneur.
 
 Tester le build standalone localement :
 ```bash

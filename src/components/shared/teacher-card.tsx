@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Medal } from "lucide-react";
 
 import type { Teacher } from "@/lib/types";
+import { asset } from "@/lib/asset";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/shared/reveal";
@@ -24,7 +25,7 @@ export function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
           <div className="flex items-center gap-4">
             {teacher.photo ? (
               <Image
-                src={teacher.photo}
+                src={asset(teacher.photo)}
                 alt={`Portrait de ${teacher.name}`}
                 width={72}
                 height={72}

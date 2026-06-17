@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 import { site } from "@/data/site";
+import { asset } from "@/lib/asset";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -58,7 +59,7 @@ export function Hero() {
         transition={{ duration: 0.9, delay: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Image
-          src="/images/hero-grappling.png"
+          src={asset("/images/hero-grappling.png")}
           alt=""
           width={520}
           height={291}
